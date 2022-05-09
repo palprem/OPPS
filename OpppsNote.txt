@@ -1,0 +1,357 @@
+Basic Defination: Programming language to create functionality in the web page.
+    mainly used to manipulate the elements.
+    Can perform calculation, adding, removing elements in the web page.
+    Adds user interraction in the web page.
+    is a case sensitive language.
+
+    Interpreted language: which means by each line of javaScript will be independently excuted by the browsers
+        so browsers convert each line of the javaScript code independently into machine language at the excution time.
+    Access HTML elements and add style.
+
+    Developed by Bredan Eich at Netscape Corporation.
+
+    javaScript is Developed based on EcmaScript:actually EcmaScript is the specification of W3C ,so based on the EcmaScript
+    the browser development companies implement that language as javaScript, so only the language specification without implemention
+    is called as EcmaScript and when it is prectically implemented in browser it is called javaScript.
+
+    javaScript is dymamically-typed/loosely-typed language.
+
+    javaScript needs to run a browser(v8), but without browser run it run on node js cammand prompt.
+    v8 engine: node js internal uses a javaScript engine called v8, so v8 engine act as javaScript Interpreter.
+
+
+Variable: Variable is named memory location in ram to store a value in the memory, so that it uses for calculation or something.
+    const:it can,t be changable when its declared and initialize.
+    var: its global valriable, and its mutable.
+    let: its block type Variable
+
+Operator: Operator is a symbol in javaScript language which perform some specific operation, its 6 type,
+    Airthmatical Operator + - * /
+    Assignment Operator  = += -= *= /= %=
+    Incriment and Dcrement Operator ++ -- 
+    Relational Operator == != < > <= >=
+    Logical Operator  && || !
+    Concatenation Operator +
+
+Template literals are literals delimited with backtick (``) characters, allowing for multi-line strings, for string interpolation with embedded expressions, 
+    and for special constructs called tagged templates
+
+Control statement: if( simple-if, if-else, else-if, nested-if)
+    switch case
+    while= 
+        let i=0
+        while(i<=10){
+            // Logical
+            i++
+        }
+    do-while= 
+        let i=1
+        do{
+            //Logical
+            i++
+        }while(i<=5)
+    for 
+    goto
+    break
+    continue
+
+Hosting: The whole thing is a built in feature in javaScript, which automatically escalate the variable declirations statement at the top of the program.
+    it is built-in feature in javaScript, which excutes all the variable decliration statement('var') at the beginning of the current scope.
+    All the global the variables are created/declared at the beginning of the program. no matter where the corresponding 'var' keyword is written for them.
+    All the local variables are created/declared at the beginning of the function; no matter where the corresponding 'var keyword is written for them.
+    Variable initialization will not be hoisted.
+
+Function: Function is collection of statements to achieve some particular task
+    Recursion: when a function that calls itself is called as recursive function. Used in mathematical operations, such as finding the factorial number.
+    Calls the same function only if the condition is true.
+    var functionname=function(p1,p2){
+        functionname(ag1, arg2)
+    }
+
+The value assigned to a parameter while creating a function is called as default argument.
+    if the user suppplies the value to that parameter, the suppplied value will be assigned to the parameter; the default argument will be ingnored.
+    if the user dosenotsupplay the value to that parametre, the default argument will be assigned to the parameter automatically.
+
+Scope of variable: Global variables are accessible everywhere in the entire program.
+    Local variable/parameter are accessible within the same function only.
+    Block level valriable are accessible within the same block only.
+
+Callback functions: A function that is passed as argument to another function, and get invoked in that another function.
+    Useful to interchange among functions to excute after completion of some calculation.
+    Also useful in asynchronous operates setTimeout/setTimeInterval/Promise.
+
+Higher Oreder Function:A function that either takes another function as an argument or a function that returns another function.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Object:What is Object Oriented Programming?
+    Object Oriented programming (OOP) is a programming paradigm that relies on the concept of classes and objects. It is used to structure 
+    a software program into simple, reusable pieces of code blueprints (usually called classes), which are used to create individual instances 
+    of objects. There are many object-oriented programming languages including JavaScript, C++, Java, and Python. javaScript fundamentily is a OOP propgraming language.
+    Object is a memory unit, which represents a physical item.
+    Object is a collection of properties and methods
+    Property is a valriable, which is stored inside the object.
+
+This keyword: In javaScript, 'this' is a predefined keyword that represents current object based on which the method is called.
+    The 'this' keyword inside a method represents a default empty object.
+    The 'this' keyword inside a method represents the current object, in which the method is present.
+    Using 'this' keyword, you can access all the members (properties and method) of current object.
+
+There are three way to call the function-
+    Call
+    Apply
+    Bind
+    
+    Call: The 'call' is a method which is used ti invoke a function and also pass the an for 'this' keyword inside the function and
+        also additional arguments, if any.
+        It is an alternative to call a function indirectly.
+        When the target function is not a method of the object; but you want to call that function as a method of object then use 'call' method.
+        function=function nunName(p1,p2){
+            //this=your object
+        }
+        function call= function.call(your obj, arg1, arg2)// excutes the function and alse supplies the arguments.
+
+    apply:functionName.apply(your object, [are1, arg2,...])
+        The 'apply' method is similar to 'call' method, which is used to invoke a function and also supply an object for 'this' keyword along with the arguments.
+        The difference is:
+            In 'call' method, you have to pass the arguments as individual arguments.
+            In 'apply' method, you have the arguments as an array.
+
+    bind:The 'bind' method is similar to call method, which creates a new function and also binds the specified object of that function and also binds the 
+        specified object as 'this' object of that function.
+        difference between 'call' nad 'bind'
+        The 'call' method excutes the function immediately, will not excutes the function immediately
+        The 'call' method will not creates a new function , but 'bind' method always creates a new function
+        var newFunction=functionName.bind(your object)//create a new function
+        newFunction(are1, arg2,...)// call the function explicity
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Inheritance: Inheritance is a concept where the child object is created based on existing parent object. 
+    1: creating objects: var parantObject={
+        property:value,
+        method:function(){ code here }
+    }
+    1: creating objects: var childObject={
+        property:value,
+        method:function(){ code here }
+    }
+    2:Inheritance using __proto__
+    childObject.__proto__ = parantObject
+
+Proto Chain: The proto-chin is a built-in chain in javaScript where a set of objects are containing the refrence of each other.
+    Every javaScript object store a refrence to the parent object in its __proto__ property, until it reaches to 'built-in object' type.
+    The __proto__ of 'built-in object' is null
+
+laxical Envirment and Scope Chain: Every function, code block{...} and the entire script has its own internal(hidden) associated 
+    object known as the lexical Envirment(Lexical Object)
+
+Closure: Closure is a function that is bundled together(enclosed) with its data (or state)
+    The Closure and function that are declared inside the Closure are not accessible outside of Closure
+    var closureFunction=function=value(){
+        var privateVariable=value
+        function privateFunction(){
+
+        }
+        return {publicFunction:function(){....}}
+    }
+    Closure is a function that can contain 'private variables' and 'private functions', which can't be accessed from outside the closure.
+    The closure function returns an objector function, whic can be accessible from outside the closure.
+    
+    function privateFunction(){
+
+    }
+    var privateVariable
+
+Encapsulation: Encapsulation is a concept of hiding some confidential data/functions to outside code
+    Data hiding should be done based on the requirement which means that, whenever you find out some data or functions should be accessible
+        only by the set of functions should not be accessible outside that data or functions should be hidden so this is also called as Encapsulation
+    in javaScript, it can be achieved using closure.
+    The variables and function of closures are not accessible outside of closure
+
+Polymorphism: Polymorphism means 'many- changing from one to another'
+    Polymorphism means many forms otherwise you can also say many changing from one to another.
+    It is a pratice of designing objects to share behaviors and be able to override shared behaviors with specific ones.
+    Can be achieved using Inheritance.
+
+    var parentObject={method:function(){}}
+    var childObject={method:function(){}}
+    childObject.__proto__=parantObject //inheritance
+    parentObject.method()// invokes parent method
+    childObject.method()// invokes child method
+
+Abstraction: Identifying only the required characteristics of an object, innoring the irrelevant details. 
+   According to which you will again find the only important characteristics.
+   An abstraction is a way of hiding the implementation details and showing only the functionality to the users. In other words, it ignores the irrelevant 
+   details and shows only the required one.
+   We cannot create an instance of Abstract Class.
+   It reduces the duplication of code.
+   Can be implemented using abstract constructor function in javaScript.
+   The parent(abstarct) constructor function contains only the properties and method that are actually necessary at outside of constructor function.
+
+'new' keyword: The 'new' keyword creates a new object and supplies the same to a constructor function as 'this' object & returns the same object at the
+    end of function, by default new object
+    Inside the constructor function, the 'this' keyword accesses the current object.
+
+Prototype: javaScript is prototype based language, that means every object contains prototype, it means properties of object contain to the parent object.
+    The 'Prototype' is a special property of every constructor function, which refers to an object that contains a set of properties and method that will 
+    be implicity stored in every object tha t is created using that specific 'cunstructor function'
+
+Difference b/w prototype and  __proto__ : In reality, the only true difference between prototype and __proto__ is that the former is a property of a class
+    constructor, while the latter is a property of a class instance.
+
+Difference b/w object and function object:In JavaScript, functions are first-class objects, because they can have properties and methods just like any other 
+    object. What distinguishes them from other objects is that functions can be called. In brief, they are Function objects.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+JSON:javaScript object notation
+    Features of JSON:
+    No methods
+    Every properties name should be in double quotes / single quotes.
+    if the value is a number or boolean, double quotes are not required
+    If the value is a string, double quotes/single quotes are required.
+
+    JSON.perse
+    JSON.stringify
+    Object.keys()
+    Object.values()
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Classes: From ES6 onwords, javaScript supports 'class-based object oriented programming' apart from 'prototype based object based object oriented programming'.
+    Class is a model of objects. Object can be created based on a class.
+    An object that is created based on a class, stores all properties and methods (function) that are defined in the class.
+    Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some 
+    syntax and semantics that are not shared with ES5 class-like semantics.
+
+Constructor: Constructor (name should be 'constructor' in lower case) is a special function in the class that excutes every time when a new object is created for the class.
+    Constructor is mainly meant for initializating properties in the class.
+    Constructor can receive one or more parameters.
+    A Class can have only one constructor. Multiple constructors in the same class in not allowed.
+    Constructor gets called when an object is created based on the class.
+    Constructor gets invoked automatically every time when an object is created based on the class.
+
+Private properties and Private methods:
+    Private properties and private methods are prefixed with '#'.
+    They are not accessible outside the class, but accessible only inside the same class.
+
+Accessor properties: Access properties won't store any data; but contains 'set' and 'get' method to let developer to add custom logic that should excute when the user 
+    tries to set/get the value
+
+Class Inheritance: when the object can access the properties and methods of other object, it is called as 'inheritance'.it is done using 'extends' keyword.
+
+Class Polymorphism: you can override the method, that means the chlid class override the parent method.
+
+Static properties & method:
+    Static properties & methods contain common details/code of all objects.
+    Static properties & methods are declared wwith 'static' keyword.
+    Static properties & methods are accessible with class name, rather than object.
+
+Array:JavaScript array is an object that represents a collection of similar type of elements.
+    There are 3 ways to construct array in JavaScript
+    By array literal
+    By creating instance of Array directly (using new keyword)
+    By using an Array constructor (using new keyword)
+Array-methods: 
+    Push()
+    Pop()
+    splice()-for inserting elements:
+        [].splice(index, o, value)
+        insert a new element at the specified index.
+        const months = ['Jan', 'March', 'April', 'June'];
+        months.splice(1, 0, 'Feb');
+        // inserts at index 1
+        console.log(months);
+        // expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+        months.splice(4, 1, 'May');
+        // replaces 1 element at index 4
+        console.log(months);
+        // expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+    concat()-
+        const arr1 = [1,2,3];
+        const arr2 = [4,5,6];
+        // Merge arrays
+        exp:const merged = arr1.concat(arr2);
+
+    every()- [].every(function(element){return condition})
+        returns true, if all the elements are matching with the given condition.
+        exp:arr.every(function(element){return element>=100})
+
+    some()- [].some(function(element) {return condition})
+        returns true, if at least one element matches with the giver condition..
+    
+    find() [].find(function(element){return condition})
+        returns the first matching element, among the elements that are matching with the given condition..
+        arr.find(function(element){return element >100})
+
+    findIndex()-[].findIndex(function(element) {return condition}).
+    forEach()
+    includes()- returns true, if the given value found at least once in the array..
+    indexOf()- returns index of the  first occurrence of the given value in the array.
+    map()
+    flatMap()
+    flat()
+    reverse()
+    slice()
+    sort()
+
+-----------------------------------------------------------------------------------------------------------------------
+Data types in javaScript:
+    -javaScript dosen't support data types explicity,but it supports internally.
+    number
+    string
+    boolean
+    undefined
+    object
+    function
+
+String()- convert anythings in to string- var a=10, var b=String(a)
+toString()- convert anythings in to string- var a=10, var b=a.toString(a)
+Difference b/w String and toString- String() : Global function, toString : method of number datatype.
+
+Number()- convert string to number, its have two condition return number or Nan.
+    parseInt()- convert string to number, its have two condition return number or Nan. it's dose not support decimal places.
+    parseFloat()- same as parseInt(), parseInt() dose not support decimal places,but its supports.
+    '+' unary Operator: converts 'string' in to 'number', internally same as Number() function.
+    toFixed()- numbervalue.toFixed(no of decimal), number to string, 10 -> 10.00.
+    float string to number= perseFloat()
+
+String function:
+    toUpperCase()
+    toLowerCase()
+    str.length
+    charAt()- return the char of given index, str.charAt(2)
+    charCodeAt()- returns the ASCII value of given index
+    substr()- returns part of string, string from the start index, up to specified length of the string.
+    indexOf()- it's used to search the character / string in the actual string,if charector found return the string else return -1.
+    replace()- it used to replace a string with another string.
+    split()- it's used to split the string into an array of string, based on separater character.
+    trim()- it's remove space from left and right side.
+    concat()
+
+Date function: 
+    new Date()
+    toLocaleDateString()- m/d/y
+    toLocaleTimeString()- h:m:s
+    getTime()- no. of milli seconds since, 1000 milli sec = 1 sec
+    getDay()- returns day of week, 0=sumday, 1=monday
+    getMonth()- 0= jan
+    getSecond()
+    getMilliSecond()
+Custom date: var variable = new Date()
+             variable.setFullYear(year)
+             variable.setMonth(year)
+             variable.setDate(year)
+
+DOM: Tree structure of elements in the web page.
+DOM manipulation: Widow, Document, Element
+Document:
+    write()- document.write('Hii  ........)
+    getElementById()
+    getElementsByName()
+    getElementsByTagName()
+    getElementsByClassName()
+    querySelectorAll()
+    querySelector('.class')
